@@ -1,6 +1,8 @@
 # model_encryption
 ## 使用cryptography库
-`from cryptography.fernet import Fernet`  
+```
+from cryptography.fernet import Fernet
+```
 **加密过程**：
 1. 先将模型转换成io.Bytes
 2. io.Bytes格式数据转成bytes格式数据  
