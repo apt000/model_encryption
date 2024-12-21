@@ -23,6 +23,14 @@ def generate_aes_128_key():
         fw.write(hashed_key)
     return hashed_key
 
+def generate_aes_192_key():
+    random_bytes = secrets.token_bytes(24)
+    # 同样可选择是否进行哈希处理来进一步保障安全性
+    hashed_key = hashlib.sha256(random_bytes).digest()[:24]
+    with open('license_AES192', 'wb') as fw:
+        fw.write(hashed_key)
+    return hashed_key
+
 def generate_aes_256_key():
     random_bytes = secrets.token_bytes(32)
     # 例如进行哈希处理（可选操作）
